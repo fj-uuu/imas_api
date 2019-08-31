@@ -29,6 +29,7 @@ services:
 
   python:
       build: ./python
+      # nginxとの連携ポート開放 djangoプロジェクト名.wsgi ファイル変更自動ロード 吐き出すログ
       command: uwsgi --socket :8001 --module app.wsgi --py-autoreload 1 --logto /tmp/mylog.log
       volumes:
         - ./src:/code
